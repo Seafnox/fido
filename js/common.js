@@ -158,6 +158,7 @@ head.ready(function() {
 		$('.js-select').removeClass('is-open');
 	});
 
+
 //*  FORM VALIDATION  *//
     $('.requestagain').on('click', function(form) {
         $('.requestsuccess').slideUp('fast');
@@ -258,4 +259,15 @@ if (window.location.href.indexOf("edit") + 1) {
     });
 }
 
+    $('.navbar .menu_btn').click(function(){$('.navbar').toggleClass('closed');});
+    resize();
 });
+
+$(window).resize(resize);
+function resize() {
+    $('.navbar').removeClass('closed');
+    if ($(window).width() < 780) {
+        $('.navbar').addClass('closed');
+    }
+
+}

@@ -17,10 +17,10 @@
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
     <meta name="msapplication-config" content="favicon/browserconfig.xml">
-	<meta name="viewport" content="width=970">
+	<meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/social-likes.css">
+    <link rel="stylesheet" href="css/jquery.reject.css">
 	<link rel="stylesheet" media="screen" href="css/screen.css">
-	<link rel="stylesheet" href="css/social-likes_classic.css">
-	<link rel="stylesheet" href="css/reject.css">
 
 </head>
 <body>
@@ -85,6 +85,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<ul class="menu js-nav">
+				<li class="menu_btn"><span>Меню</span></li>
 				<li><a href="#about"><span>Кто автор</span></a></li>
 				<li><a href="#skills"><span>Какие навыки вы получите</span></a></li>
 				<li><a href="#video"><span>Видео-анонс</span></a></li>
@@ -124,14 +125,14 @@
 					<h2 class="h2 title contenteditable" id="about_h1">
                         <? include("editable/about_h1.html");?></h2>
 					<div class="row">
+                        <div class="col-md-6">
+                            <div class="about__author contenteditable" id="about_author">
+                                <? include("editable/about_author.html");?>
+                            </div>
+                        </div>
 						<div class="col-md-6">
 							<div class="about__quote contenteditable" id="about_quote">
                                 <? include("editable/about_quote.html");?>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="about__author contenteditable" id="about_author">
-                                <? include("editable/about_author.html");?>
 							</div>
 						</div>
 					</div>
@@ -151,26 +152,31 @@
 					<h2 class="h2 title contenteditable" id="skills_h1">
                         <? include("editable/skills_h1.html");?></h2>
 					<div class="row">
-						<div class="col-md-3">
-							<div class="skills__item skills__item_1 contenteditable" id="skills_item_1">
-                                <? include("editable/skills_item_1.html");?>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="skills__item skills__item_2 contenteditable" id="skills_item_2">
-                                <? include("editable/skills_item_2.html");?>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="skills__item skills__item_3 contenteditable" id="skills_item_3">
-                                <? include("editable/skills_item_3.html");?>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="skills__item skills__item_4 contenteditable" id="skills_item_4">
-                                <? include("editable/skills_item_4.html");?>
-							</div>
-						</div>
+
+						<div class="col-md-6"><div class="row">
+                            <div class="col-md-6">
+                                <div class="skills__item skills__item_1 contenteditable" id="skills_item_1">
+                                    <? include("editable/skills_item_1.html");?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skills__item skills__item_2 contenteditable" id="skills_item_2">
+                                    <? include("editable/skills_item_2.html");?>
+                                </div>
+                            </div>
+						</div></div>
+                        <div class="col-md-6"><div class="row">
+                            <div class="col-md-6">
+                                <div class="skills__item skills__item_3 contenteditable" id="skills_item_3">
+                                    <? include("editable/skills_item_3.html");?>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skills__item skills__item_4 contenteditable" id="skills_item_4">
+                                    <? include("editable/skills_item_4.html");?>
+                                </div>
+						    </div>
+                        </div></div>
 					</div>
 				</div>
 				<!-- .skills -->
