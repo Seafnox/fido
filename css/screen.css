@@ -1616,6 +1616,8 @@ ul, ol { list-style-type: none; margin: 0; padding: 0; }
 @media screen and (max-width: 768px) {
     h1, .h1 {font-size: 40px;}
     h2, .h2 {font-size: 28px;margin-bottom: 25px;}
+    .btn {font-size: 22px; display:block; padding: 24px 0px;}
+    .header .btn-row .btn {padding: 24px 10px;}
     .header .header__intro {font-size:18px;}
     .header .header__intro .lead {font-size:19px; margin-bottom: 23px;}
     .header .btn-row {margin-left: 0px;}
