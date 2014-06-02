@@ -5,28 +5,27 @@ var hash = "";
 // -- Get URL params
 var urlParams;
 (window.onpopstate = function () {
-    var match,
-        pl     = /\+/g,  // Regex for replacing addition symbol with a space
-        search = /([^&=]+)=?([^&]*)/g,
-        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-        query  = window.location.search.substring(1);
+	var match,
+		pl     = /\+/g,  // Regex for replacing addition symbol with a space
+		search = /([^&=]+)=?([^&]*)/g,
+		decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+		query  = window.location.search.substring(1);
 
-    urlParams = {};
-    while (match = search.exec(query))
-        urlParams[decode(match[1])] = decode(match[2]);
+	urlParams = {};
+	while (match = search.exec(query))
+		urlParams[decode(match[1])] = decode(match[2]);
 })();
 // --
 head.ready(function() {
 
-    $('body').activity({
-        'achieveTime':60
-        ,'testPeriod':10
-        ,useMultiMode: 1
-        ,callBack: function (e) {
-            ga('send', 'event', 'активность', 'активность в течение 60 сек', 'book | jquery.activity');
-            yaCounter12922898.reachGoal('activity-60-sec');
-        }
-    });
+	$('body').activity({
+		'achieveTime':60
+		,'testPeriod':10
+		,useMultiMode: 1
+		,callBack: function (e) {
+			ga('send', 'event', 'активность', 'активность в течение 60 сек', 'fedotkin | jquery.activity');
+		}
+	});
 
 	$.reject();
 
@@ -63,7 +62,7 @@ head.ready(function() {
 		embed+=1;
 	}
 
-    // Video
+	// Video
 	$(".embeded").each(function() {
 		if (!$(this).attr("data-autoplay")) {
 			$(this).attr("data-autoplay", 'false');
@@ -93,14 +92,12 @@ head.ready(function() {
 				window.location.hash = target;
 		});
 	});
-    $("header .js-nav a").click(function() {
-        ga('send', 'event', 'клик', 'клик на кнопку в шапке', 'fedotkin | клик на кнопку');
-        //yaCounter12922898.reachGoal('form-sent-fedotkin-imsider');
-    });
-    $("nav .js-nav a[href='#feedback']").click(function() {
-        ga('send', 'event', 'клик', 'клик на кнопку в меню', 'fedotkin | клик на кнопку');
-        //yaCounter12922898.reachGoal('form-sent-fedotkin-imsider');
-    });
+	$("header .js-nav a").click(function() {
+		ga('send', 'event', 'клик', 'клик на кнопку', 'fedotkin | клик на кнопку первого экрана');
+	});
+	$("nav .js-nav a[href='#feedback']").click(function() {
+		ga('send', 'event', 'клик', 'клик на кнопку', 'fedotkin | клик на кнопку верхнего меню');
+	});
 
 	function navScroll(){
 		$('.section').each(function(){
@@ -160,114 +157,114 @@ head.ready(function() {
 
 
 //*  FORM VALIDATION  *//
-    $('.requestagain').on('click', function(form) {
-        $('.requestsuccess').slideUp('fast');
-        $('.request').slideDown();
-        return false;
-    });
-    $(document).click(function(e) {
-        if ($(e.target).parents('form').size() > 0 || e.target.tagName != 'FORM') {
-            $('form').find('input.error').removeClass('error');
-            $('form').find("input[type='submit']").removeClass("disabled").removeAttr('disabled');
-            $('form').find(".error").remove();
-        }
-    });
-    $("#feedback form").validate({
-        submitHandler: function(form) {
-            $('.request').slideUp('fast');
-            $('.requestsuccess').slideDown();
-            // -- отправка формы подписки
-            var paramNames = ['utm_source','utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-            var webform_id = urlParams['webform_id'] ? urlParams['webform_id'] : '650704';
-            var initParams = { 'u': 'SwZy', 'webform_id': webform_id };
-            for(var i=0; i<paramNames.length; i++){
-                var element = paramNames[i];
-                initParams['custom_' + element] = urlParams.hasOwnProperty(element) ? urlParams[element] : '';
-            }
-            $.ajax({
-                url: 'https://app.getresponse.com/add_contact_webform.html',
-                data: $(form).serialize() + '&' + $.param(initParams),
-                type: 'POST'
-            });
-            // --
+	$('.requestagain').on('click', function(form) {
+		$('.requestsuccess').slideUp('fast');
+		$('.request').slideDown();
+		return false;
+	});
+	$(document).click(function(e) {
+		if ($(e.target).parents('form').size() > 0 || e.target.tagName != 'FORM') {
+			$('form').find('input.error').removeClass('error');
+			$('form').find("input[type='submit']").removeClass("disabled").removeAttr('disabled');
+			$('form').find(".error").remove();
+		}
+	});
+	$("#feedback form").validate({
+		submitHandler: function(form) {
+			$('.request').slideUp('fast');
+			$('.requestsuccess').slideDown();
 
-            // -- events: Google Analytics, Yandex.Metrika, RedTram
-            ga('send', 'event', 'подписка', 'отправка формы подписки', 'fedotkin | форма подписки GetResponse');
-            //yaCounter12922898.reachGoal('form-sent-fedotkin-imsider');
-            //if (typeof gra !== 'undefined') gra.trackEvent();
-            // --
+			// -- отправка формы подписки
+			var paramNames = ['utm_source','utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+			var webform_id = urlParams['webform_id'] ? urlParams['webform_id'] : '3231204';
+			var initParams = { 'u': 'SwZy', 'webform_id': webform_id };
+			for(var i=0; i<paramNames.length; i++){
+				var element = paramNames[i];
+				initParams['custom_' + element] = urlParams.hasOwnProperty(element) ? urlParams[element] : '';
+			}
+			$.ajax({
+				url: 'https://app.getresponse.com/add_contact_webform.html',
+				data: $(form).serialize() + '&' + $.param(initParams),
+				type: 'POST'
+			});
+			// --
 
-            window.open("//imsider.ru/confirm/?id=fedotkin&" + $(form).serialize(), '_blank');
-            return false;
-        },
-        errorPlacement: function(error, element) { return;},
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass(errorClass).removeClass(validClass);
-            $(element).parents('form').find("input[type='submit']").addClass("disabled").attr('disabled','disabled');
-            if ($(element).attr("data-placeholder")=== undefined)
-                $(element).attr("data-placeholder", $(element).attr("placeholder"));
-            if ($(element).parent().find("div.error").size()<= 0) {
-                $(element).parent().append("<div class='error'></div>")
-            }
-            $(element).parent().find("div.error").html(this.errorMap[$(element).attr("name")]);
-        },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).removeClass(errorClass);
-            $(element).parents('form').find("input[type='submit']").removeClass("disabled").removeAttr('disabled');
-            $(element).parent().find("span.error").remove();
-            if (element.validity.valid) $(element).addClass(validClass);
-            $(element).attr("placeholder", $(element).attr("data-placeholder"));
-        },
-        invalidHandler: function(event, validator) {},
-        messages: {
-            name: {required: "<p>Укажите имя</p>"},
-            email: {required: "<p>Укажите адрес почты</p>", email: "<p>Это не адрес почты. Должно быть похоже на user@mail.com</p>"}
-        },
-        rules: {
-            name: {
-                required:true
-            },
-            email: {
-                required:true,
-                email: true
-            }
-        },
-        onclick:    true,
-        focusInvalid:   false,
-        focusCleanup:   true,
-        onfocusout: false
-    });
+			// -- events: Google Analytics
+			ga('send', 'event', 'подписка', 'отправка формы подписки', 'fedotkin | форма подписки GetResponse');
+			// --
+
+			window.open("//imsider.ru/confirm/?id=fedotkin&" + $(form).serialize(), '_blank');
+			return false;
+		},
+		errorPlacement: function(error, element) { return;},
+		highlight: function(element, errorClass, validClass) {
+			$(element).addClass(errorClass).removeClass(validClass);
+			$(element).parents('form').find("input[type='submit']").addClass("disabled").attr('disabled','disabled');
+			if ($(element).attr("data-placeholder")=== undefined)
+				$(element).attr("data-placeholder", $(element).attr("placeholder"));
+			if ($(element).parent().find("div.error").size()<= 0) {
+				$(element).parent().append("<div class='error'></div>")
+			}
+			$(element).parent().find("div.error").html(this.errorMap[$(element).attr("name")]);
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).removeClass(errorClass);
+			$(element).parents('form').find("input[type='submit']").removeClass("disabled").removeAttr('disabled');
+			$(element).parent().find("span.error").remove();
+			if (element.validity.valid) $(element).addClass(validClass);
+			$(element).attr("placeholder", $(element).attr("data-placeholder"));
+		},
+		invalidHandler: function(event, validator) {},
+		messages: {
+			name: {required: "<p>Укажите имя</p>"},
+			email: {required: "<p>Укажите адрес почты</p>", email: "<p>Это не адрес почты. Должно быть похоже на user@mail.com</p>"}
+		},
+		rules: {
+			name: {
+				required:true
+			},
+			email: {
+				required:true,
+				email: true
+			}
+		},
+		onclick:    true,
+		focusInvalid:   false,
+		focusCleanup:   true,
+		onfocusout: false
+	});
 
 //*  EDIT AUTH *//
 if (window.location.href.indexOf("edit") + 1) {
 
-    username = prompt('Please set user name',"user")
-    password = prompt('Please set user password',"qwerty123")
-    jQuery.ajax({
-        type: "POST",
-        url: "get_access.php",
-        data: { username: username, password: password}
+	username = prompt('Please set user name', "");
+	password = prompt('Please set user password', "");
 
-    }).done(function (data, textStatus, jqXHR) {
-            alert("Access granted.");
-            hash = jqXHR.responseText;
-            $(".contenteditable").attr("contenteditable", "true");
-            CKEDITOR.disableAutoInline = true;
-            CKEDITOR.inlineAll();
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-            alert("Access failed. [" + jqXHR.responseText + " " + errorThrown + "]");
-    });
+	jQuery.ajax({
+		type: "POST",
+		url: "get_access.php",
+		data: { username: username, password: password}
+
+	}).done(function (data, textStatus, jqXHR) {
+			alert("Access granted.");
+			hash = jqXHR.responseText;
+			$(".contenteditable").attr("contenteditable", "true");
+			CKEDITOR.disableAutoInline = true;
+			CKEDITOR.inlineAll();
+	}).fail(function (jqXHR, textStatus, errorThrown) {
+			alert("Access failed. [" + jqXHR.responseText + " " + errorThrown + "]");
+	});
 }
 
-    $('.navbar .menu_btn').click(function(){$('.navbar').toggleClass('closed');});
-    resize();
+	$('.navbar .menu_btn').click(function(){$('.navbar').toggleClass('closed');});
+	resize();
 });
 
 $(window).resize(resize);
 function resize() {
-    $('.navbar').removeClass('closed');
-    if ($(window).width() < 780) {
-        $('.navbar').addClass('closed');
-    }
+	$('.navbar').removeClass('closed');
+	if ($(window).width() < 780) {
+		$('.navbar').addClass('closed');
+	}
 
 }
