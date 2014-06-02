@@ -7,7 +7,7 @@ if (!isset($_POST['username']) || !isset($_POST['password'])) {
 }
 $username = strip_tags($_POST['username']);
 $password = strip_tags($_POST['password']);
-if ($users[$username] != $password) {
+if ($users[$username] != $password || $username == "") {
     include("error403.php");
     exit();
 }

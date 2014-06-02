@@ -8,9 +8,8 @@ if (!isset($_POST['hash']) || !isset($_POST['username'])) {
 }
 $username = strip_tags($_POST['username']);
 $md5 = strip_tags($_POST['hash']);
-if ($md5 != md5($key_phrase.$username)) {
+if ($md5 != md5($key_phrase.$username) || $username == "") {
     include("error403.php");
-    echo md5($key_phrase.$username);
     exit();
 }
 if (!isset($_POST['editableID']) || !isset($_POST['data'])) {
