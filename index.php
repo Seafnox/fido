@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/jquery.reject.css">
 	<link rel="stylesheet" media="screen" href="css/screen.css">
 
+    <!-- Sublime Video loader -->
+    <script type="text/javascript" src="//cdn.sublimevideo.net/js/dy1amptx.js"></script>
+    <!-- / Sublime Video loader -->
 </head>
 <body>
     <div id="preloader">
@@ -33,6 +36,8 @@
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-29022975-1', 'imsider.ru');
+			ga('require', 'displayfeatures');
+			ga('require', 'linkid', 'linkid.js');
             ga('send', 'pageview');
         </script>
         <!-- / Google Analytics counter -->
@@ -189,10 +194,8 @@
 			<div class="container">
 				<div class="video">
 					<div class="video__viewport">
-						<a href="/" class="video_link" data-videoid="WnAuONzdujw">
-							<span class="image"><img src="img/video.jpg" alt="img"><span class="video__play"></span></span>
-						</a>
-						<!-- /.video_link -->
+                        <video id="WnAuONzdujw" class="sublime" title="Интенсив Имсайдера" data-sharing-url="http://intensive.imsider.ru"
+                               data-sharing-title="Интенсив Имсайдера" data-uid="WnAuONzdujw" data-youtube-id="WnAuONzdujw" data-autoresize="fit" data-autoplay="false" preload="none"></video>
 					</div>
 				</div>
 				<!-- /.video -->
