@@ -1616,6 +1616,7 @@ ul, ol { list-style-type: none; margin: 0; padding: 0; }
 @media screen and (max-width: 768px) {
     h1, .h1 {font-size: 40px;}
     h2, .h2 {font-size: 28px;margin-bottom: 25px;}
+    h3, .h3 {font-size: 22px;margin-bottom: 10px;}
     .btn {font-size: 22px; display:block; padding: 24px 0px;}
     .header .btn-row .btn {padding: 24px 10px;}
     .header .header__intro {font-size:18px;}
@@ -1645,7 +1646,7 @@ ul, ol { list-style-type: none; margin: 0; padding: 0; }
     .why p {margin-bottom: 5px; font-size: 16px; }
     .why p:last-child {margin-bottom: 0px; }
     .why:before {top: 0; left: 0; margin-top: 0px;}
-    .why { margin-top: 41px; padding-left: 0px; padding-top:120px;margin-bottom: 0px;}
+    .why { margin-top: 41px; padding-left: 0px; padding-top:130px;margin-bottom: 0px;}
     .skills .col-md-6 {width: 100%;margin-bottom: 30px;}
     .skills .col-md-6 .col-md-6 {width: 50%;}
     .section.section_video {padding-top: 0px;}
@@ -1653,13 +1654,16 @@ ul, ol { list-style-type: none; margin: 0; padding: 0; }
     .testimonials .col-md-4 {width:auto;}
     .testimonials .testimonials__in .row {margin-top: 0px;}
     .testimonial {margin-bottom: 35px;}
+    .row.is-hidden .col-md-4:last-child {margin-bottom: -35px;}
     .testimonial .testimonial__author {margin-top: 14px;}
     .testimonial .testimonial__authorname {margin-top: -5px;}
+    .testimonial .testimonial__authorpic {width: 40px; margin-right:10px;}
     .testimonial .testimonial__authorpic img {width: 40px;height: 40px;}
     .testimonials .testimonials__moar .btn {margin-top: 0px;}
     .gifts .col-md-6 {width:auto;margin-bottom: 25px;}
     .gifts {margin-bottom: -25px;}
     .request .col-md-5 {width:100%;}
+    .request .request__formfield {margin-bottom: 28px;}
     .request .col-md-7 {width:auto;}
     .request p {font-size: 16px;}
     .bonus p strong {font-size: 18px;}
