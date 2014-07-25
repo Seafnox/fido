@@ -95,9 +95,13 @@ head.ready(function() {
 	$("header .js-nav a").click(function() {
 		ga('send', 'event', 'клик', 'клик на кнопку', 'fedotkin | клик на кнопку первого экрана');
 	});
-	$("nav .js-nav a[href='#feedback']").click(function() {
-		ga('send', 'event', 'клик', 'клик на кнопку', 'fedotkin | клик на кнопку верхнего меню');
-	});
+    $("nav .js-nav a[href='#feedback']").click(function() {
+        ga('send', 'event', 'клик', 'клик на кнопку', 'fedotkin | клик на кнопку верхнего меню');
+    });
+    $('#tank .container').hide();
+    $(".js-nav a[href='#tank']").click(function() {
+        $('#tank .container').slideDown(500);
+    });
 
 	function navScroll(){
 		$('.section').each(function(){
@@ -150,6 +154,10 @@ head.ready(function() {
 	}
 	select();
 
+    if ($(".about .video__viewport").size() > 0 && $(window).width > 768 ) {
+        $(".about .video__viewport").height($(".about .about__quote").outerHeight() - 4);
+    }
+
 	//click document
 	$(document).click(function() {
 		$('.js-select').removeClass('is-open');
@@ -178,6 +186,7 @@ head.ready(function() {
 			var paramNames = ['utm_source','utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 			var webform_id = urlParams['webform_id'] ? urlParams['webform_id'] : '3231204';
 			var initParams = { 'u': 'SwZy', 'webform_id': webform_id };
+
 			for(var i=0; i<paramNames.length; i++){
 				var element = paramNames[i];
 				initParams['custom_' + element] = urlParams.hasOwnProperty(element) ? urlParams[element] : '';

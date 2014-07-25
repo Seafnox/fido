@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/social-likes.css">
     <link rel="stylesheet" href="css/jquery.reject.css">
-	<link rel="stylesheet" media="screen" href="css/screen.css">
+	<link rel="stylesheet" media="screen" href="css/screen2.css">
 
     <!-- Sublime Video loader -->
     <script type="text/javascript" src="//cdn.sublimevideo.net/js/dy1amptx.js"></script>
@@ -91,11 +91,10 @@
 		<div class="container">
 			<ul class="menu js-nav">
 				<li class="menu_btn"><span>Меню</span></li>
-				<li><a href="#about"><span>Кто автор</span></a></li>
-				<li><a href="#skills"><span>Какие навыки вы получите</span></a></li>
-				<li><a href="#video"><span>Видео-анонс</span></a></li>
-				<li><a href="#testimonials"><span>Отзывы</span></a></li>
-				<li class="menu__btn"><a href="#feedback"><span><em>Получить материалы</em></span></a></li>
+				<li><a href="#about"><span>Что это такое и для кого</span></a></li>
+				<li><a href="#skills"><span>Зачем мне это нужно</span></a></li>
+				<li><a href="#actions"><span>Что сделать, чтобы подписаться</span></a></li>
+				<li class="menu__btn"><a href="#feedback"><span><em>Получить материалы сейчас!</em></span></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -112,7 +111,7 @@
 					<!-- /.header__intro -->
 					<p>
 						<span class="btn-row js-nav">
-							<a href="#feedback" class="btn btn-primary">Получить материалы</a>
+							<a href='#tank' class="btn btn-primary">Я в танке<span class="max"> и хочу подписаться сейчас</span></a>
 						</span>
 					</p>
 				</div>
@@ -123,176 +122,132 @@
 	<!-- /.header -->
 
 	<div class="page">
+        <section id="tank">
+            <div class="container">
+                <div class="arrow">
+                    Да, все нажимают эту кнопку, не Вы первый. Теперь Вы можете или все-таки дочитать текст и подать
+                    заявку на вступление в клуб. Или покинуть нас, закрыв сайт. Удачи!
+                </div>
+            </div>
+        </section>
 
 		<section id="about" class="section section_about">
 			<div class="container">
 				<div class="about">
 					<h2 class="h2 title contenteditable" id="about_h1">
                         <? include("editable/about_h1.html");?></h2>
+                    <div class="about__author contenteditable" id="about_author">
+                        <? include("editable/about_author.html");?>
+                    </div>
 					<div class="row">
+						<div class="col-md-6">
+                            <div class="video">
+                                <div class="video__viewport">
+                                    <video id="WnAuONzdujw" class="sublime" title="Интенсив Имсайдера" data-sharing-url="http://intensive.imsider.ru"
+                                           data-sharing-title="Интенсив Имсайдера" data-uid="WnAuONzdujw" data-youtube-id="WnAuONzdujw" data-autoresize="fill" height="320" data-autoplay="false" preload="none"></video>
+                                </div>
+                            </div>
+						</div>
                         <div class="col-md-6">
-                            <div class="about__author contenteditable" id="about_author">
-                                <? include("editable/about_author.html");?>
+                            <div class="about__quote contenteditable" id="about_quote">
+                                <? include("editable/about_quote.html");?>
                             </div>
                         </div>
-						<div class="col-md-6">
-							<div class="about__quote contenteditable" id="about_quote">
-                                <? include("editable/about_quote.html");?>
-							</div>
-						</div>
 					</div>
 				</div>
 				<!-- /.about -->
-				<div class="why contenteditable" id="why">
+			</div>
+		</section>
+		<!-- /.section -->
+
+        <section class="section section_why">
+            <div class="container">
+                <h2 class="h2 title contenteditable" id="why_h1">
+                    <? include("editable/why_h1.html");?></h2>
+                <div class="why contenteditable" id="why">
                     <? include("editable/why.html");?>
                 </div>
-				<!-- /.why -->
-			</div>
-		</section>
-		<!-- /.section -->
+                <!-- /.why -->
+            </div>
+        </section>
+        <!-- /.section -->
 
-		<section id="skills" class="section section_skills">
-			<div class="container">
-				<div class="skills">
-					<h2 class="h2 title contenteditable" id="skills_h1">
+        <section id="skills" class="section section_skills">
+            <div class="container">
+                <div class="skills">
+                    <h2 class="h2 title contenteditable" id="skills_h1">
                         <? include("editable/skills_h1.html");?></h2>
-					<div class="row">
-
-						<div class="col-md-6"><div class="row">
-                            <div class="col-md-6">
-                                <div class="skills__item skills__item_1 contenteditable" id="skills_item_1">
-                                    <? include("editable/skills_item_1.html");?>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-8 contenteditable " id="skills_info">
+                            <? include("editable/skills_info.html");?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="skills__item skills__item_1 contenteditable" id="skills_item_1">
+                                <? include("editable/skills_item_1.html");?>
                             </div>
-                            <div class="col-md-6">
-                                <div class="skills__item skills__item_2 contenteditable" id="skills_item_2">
-                                    <? include("editable/skills_item_2.html");?>
-                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skills__item skills__item_2 contenteditable" id="skills_item_2">
+                                <? include("editable/skills_item_2.html");?>
                             </div>
-						</div></div>
-                        <div class="col-md-6"><div class="row">
-                            <div class="col-md-6">
-                                <div class="skills__item skills__item_3 contenteditable" id="skills_item_3">
-                                    <? include("editable/skills_item_3.html");?>
-                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skills__item skills__item_3 contenteditable" id="skills_item_3">
+                                <? include("editable/skills_item_3.html");?>
                             </div>
-                            <div class="col-md-6">
-                                <div class="skills__item skills__item_4 contenteditable" id="skills_item_4">
-                                    <? include("editable/skills_item_4.html");?>
-                                </div>
-						    </div>
-                        </div></div>
-					</div>
-				</div>
-				<!-- .skills -->
-			</div>
-			<!-- /.container -->
-		</section>
-		<!-- /.section -->
+                        </div>
+                    </div>
+                </div>
+                <!-- .skills -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- /.section -->
 
-		<section id="video" class="section section_video">
-			<div class="container">
-				<div class="video">
-					<div class="video__viewport">
-                        <video id="WnAuONzdujw" class="sublime" title="Интенсив Имсайдера" data-sharing-url="http://intensive.imsider.ru"
-                               data-sharing-title="Интенсив Имсайдера" data-uid="WnAuONzdujw" data-youtube-id="WnAuONzdujw" data-autoresize="fit" data-autoplay="false" preload="none"></video>
-					</div>
-				</div>
-				<!-- /.video -->
-			</div>
-			<!-- /.container -->
-		</section>
-		<!-- /.section -->
+        <section id="actions" class="section section_actions">
+            <div class="container">
+                <div class="actions">
+                    <h2 class="h2 title contenteditable" id="actions_h1">
+                        <? include("editable/actions_h1.html");?></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="action_number">1</div>
+                            <div class="actions__item actions__item_1 contenteditable" id="actions_item_1">
+                                <? include("editable/actions_item_1.html");?>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="action_number">2</div>
+                            <div class="actions__item actions__item_2 contenteditable" id="actions_item_2">
+                                <? include("editable/actions_item_2.html");?>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="action_number">3</div>
+                            <div class="actions__item actions__item_3 contenteditable" id="actions_item_3">
+                                <? include("editable/actions_item_3.html");?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .skills -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- /.section -->
 
-		<section id="testimonials" class="section section_testimonials">
-			<div class="container">
-				<div class="testimonials">
-					<h2 class="h2 title contenteditable" id="testimonials_h1">
-                        <? include("editable/testimonials_h1.html");?></h2>
-					<div class="testimonials__in">
-						<div class="row">
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_1">
-                                    <? include("editable/testimonial_comment_1.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_2">
-                                    <? include("editable/testimonial_comment_2.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_3">
-                                    <? include("editable/testimonial_comment_3.html");?>
-								</article>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_4">
-                                    <? include("editable/testimonial_comment_4.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_5">
-                                    <? include("editable/testimonial_comment_5.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_6">
-                                    <? include("editable/testimonial_comment_6.html");?>
-								</article>
-							</div>
-						</div>
-						<div class="row is-hidden">
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_7">
-                                    <? include("editable/testimonial_comment_7.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_8">
-                                    <? include("editable/testimonial_comment_8.html");?>
-								</article>
-							</div>
-							<div class="col-md-4">
-								<article class="testimonial contenteditable" id="testimonial_comment_9">
-                                    <? include("editable/testimonial_comment_9.html");?>
-								</article>
-							</div>
-						</div>
-					</div>
-					<div class="testimonials__moar">
-						<a href="#" class="btn btn-default js-testimonials"><span>Показать еще отзывы</span></a>
-					</div>
-				</div>
-				<!-- /.testimonials -->
-			</div>
-			<!-- /.container -->
-		</section>
-		<!-- /.section -->
 
-		<div class="section section_gifts">
+		<div class="section section_inform">
 			<div class="container">
-				<div class="gifts">
-					<h2 class="h2 contenteditable" id="gifts_h1">
-                        <? include("editable/gifts_h1.html");?></h2>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="gifts__item gifts__item_1 contenteditable" id="gifts_item_1">
-                                <? include("editable/gifts_item_1.html");?>
-							</div>
-							<!-- /.gift -->
-						</div>
-						<div class="col-md-6">
-							<div class="gifts__item gifts__item_2 contenteditable" id="gifts_item_2">
-                                <? include("editable/gifts_item_2.html");?>
-							</div>
-							<!-- /.gift -->
-						</div>
+				<div class="inform">
+					<h2 class="h2 contenteditable" id="inform_h1">
+                        <? include("editable/inform_h1.html");?></h2>
+					<div class="contenteditable" id="inform_list">
+                        <? include("editable/inform_list.html");?>
 					</div>
 				</div>
-				<!-- .gifts -->
 			</div>
 			<!-- /.container -->
 		</div>
@@ -301,56 +256,80 @@
 
 		<section id="feedback" class="section section_request">
 			<div class="container">
-				<div class="request">
+				<div class="request<?= isset($_GET["design2"]) ? " design2" : "" ?>">
 					<article class="contenteditable" id="feedback_article">
                         <? include("editable/feedback_article.html");?></article>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="request__form">
-								<form action="#" role="form" class="rf">
-                                    <input type="hidden" value="">
-									<div class="form-group">
-										<label for="name">Как к вам обращаться?</label>
-										<input type="text" class="form-control rj" id="name" name="name" placeholder="" value="">
-									</div>
-									<div class="form-group">
-										<label for="email">Электронная почта</label>
-										<input type="text" class="form-control rj" id="email" name="email" placeholder="" value="">
-									</div>
-									<div class="form-group">
-										<label>Ваша роль в бизнесе</label>
-										<div class="select js-select">
-											<span><em class="js-select-text">Владелец</em><i></i></span>
-											<input type="hidden" class="js-select-input" name="ownertype" value="">
-											<div class="select__drop js-select-drop">
-												<ul>
-													<li data-id="1" class="is-selected">Владелец</li>
-													<li data-id="2">Директор</li>
-													<li data-id="3">Сотрудник</li>
-													<li data-id="4">Я хочу открыть бизнес</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="request__formfield">
-										<div id="website" class="request__formfield-trigger">У меня есть сайт</div>
-										<div class="form-group">
-											<label>Адрес сайта</label>
-											<input type="text" class="form-control" id="site" name="site" value="" placeholder="">
-										</div>
-									</div>
-									<input type="submit" class="btn btn-primary btn_submit" value="Получить материалы" />
-								</form>
-							</div>
-							<!-- /.request__form -->
-						</div>
-						<div class="col-md-7">
-							<div class="bonus contenteditable" id="feedback_bonus">
-                                <? include("editable/feedback_bonus.html");?>
-							</div>
-							<!-- /.bonus -->
-						</div>
-					</div>
+                    <form action="#" role="form" class="rf">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Как к вам обращаться?</label>
+                                    <input type="text" class="form-control rj" id="name" name="name" placeholder="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Электронная почта</label>
+                                    <input type="text" class="form-control rj" id="email" name="email" placeholder="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="business_region">В каком регионе вы работаете</label>
+                                    <input type="text" class="form-control rj" id="region" name="custom_business_region" placeholder="" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="business_site">Ваш сайт</label>
+                                    <input type="text" class="form-control" id="site" name="custom_business_site" value="" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ваша роль в бизнесе</label>
+                                    <div class="select js-select">
+                                        <span><em class="js-select-text">Владелец</em><i></i></span>
+                                        <input type="hidden" class="js-select-input" name="custom_business_role" value="">
+                                        <div class="select__drop js-select-drop">
+                                            <ul>
+                                                <li data-id="1" class="is-selected">Владелец</li>
+                                                <li data-id="2">Директор</li>
+                                                <li data-id="3">Сотрудник</li>
+                                                <li data-id="4">Я хочу открыть бизнес</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="small-form-group">
+                                        <label for="">Количество сотрудников</label>
+                                        <input type="text" class="form-control" id="" name="custom_business_employees" placeholder="" value="">
+                                    </div>
+                                    <div class="small-form-group">
+                                        <label for="">Количество заказов в день</label>
+                                        <input type="text" class="form-control" id="" name="custom_business_orders_per_day" placeholder="" value="">
+                                    </div>
+                                </div>
+                                <div class="radio-group">
+                                    <div class="radio_header">Бизнес прибыльный?</div>
+                                    <div class="radio_wrapper">
+                                        <input type="radio" class="form-radio" id="business_profit_1" name="custom_business_successful" placeholder="" value="1" checked="checked">
+                                        <label for="business_profit_1">Да</label>
+                                    </div>
+                                    <div class="radio_wrapper">
+                                        <input type="radio" class="form-radio" id="business_profit_0" name="custom_business_successful" placeholder="" value="0">
+                                        <label for="business_profit_0">Пока нет</label>
+                                    </div>
+                                </div>
+                                <div class="text-group">
+                                    <label for="">Чем вы можете быть полезны интернет-клубу</label>
+                                    <textarea class="form-control" id="" name="custom_business_value_for_club"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <input type="submit" class="btn btn-primary btn_submit" value="Записаться в рассылку" />
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
 				</div>
 				<!-- /.request -->
 				<div class="requestsuccess contenteditable" id="feedback_requestsuccess" style="display: none;">
