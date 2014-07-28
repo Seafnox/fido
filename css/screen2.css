@@ -1414,7 +1414,7 @@ ul, ol { list-style-type: none; margin: 0; padding: 0; }
 
 .header { background: #f48820 url(../img/pttrn.jpg); overflow: hidden; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
 .header > .container { position: relative; padding-top: 40px; padding-bottom: 21px; }
-.header > .container:before { position: absolute; bottom: 0; right: -97px; width: 415px; height: 520px; background: url(../img/person.png) no-repeat 0 0; }
+.header > .container:before { position: absolute; bottom: 0; right: -97px; width: 415px; height: 640px; background: url(../img/fedotkin_chef640.png) no-repeat 0 0; }
 .header .h1 { margin-bottom: 12px; }
 .header .header__intro { position: relative; margin-right: 170px; font-size: 20px; }
 .header .header__intro .lead { font-family: "Bitter Italic", "Times New Roman", Times, serif; margin-bottom: 28px; }
