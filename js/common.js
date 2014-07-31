@@ -258,8 +258,10 @@ if (window.location.href.indexOf("edit") + 1) {
 			alert("Access granted.");
 			hash = jqXHR.responseText;
 			$(".contenteditable").attr("contenteditable", "true");
+            $(".contenteditable").on("click", function() {
+                CKEDITOR.inline( $(this)[0] );
+            });
 			CKEDITOR.disableAutoInline = true;
-			CKEDITOR.inlineAll();
 	}).fail(function (jqXHR, textStatus, errorThrown) {
 			alert("Access failed. [" + jqXHR.responseText + " " + errorThrown + "]");
 	});

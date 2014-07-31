@@ -124,9 +124,8 @@
 	<div class="page">
 		<section id="tank">
 			<div class="container">
-				<div class="arrow">
-					Да, все нажимают эту кнопку, не Вы первый. Теперь Вы можете или все-таки дочитать текст и подать
-					заявку на вступление в клуб. Или покинуть нас, закрыв сайт. Удачи!
+				<div class="arrow contenteditable" id="tank_content">
+                    <? include("editable/tank_content.html");?>
 				</div>
 			</div>
 		</section>
