@@ -2,6 +2,7 @@ var dump_file = "inline_update.php";
 var username = "";
 var password = "";
 var hash = "";
+var menu_offset = 50;
 // -- Get URL params
 var urlParams;
 (window.onpopstate = function () {
@@ -16,7 +17,7 @@ var urlParams;
 		urlParams[decode(match[1])] = decode(match[2]);
 })();
 // --
-head.ready(function() {
+$(document).ready(function() {
 
 	$('body').activity({
 		'achieveTime':60
@@ -35,20 +36,6 @@ head.ready(function() {
 		$('.js-testimonials').hide();
 		$(this).parent().parent().find('.row').slideDown('fast');
 		return false;
-	});
-
-	$('.request__formfield-trigger').on('click', function() {
-		$(this).parent().find('.form-group').slideToggle('fast');
-		$('#website').text(function(_,txt) {
-				var ret='';
-
-				if ( txt == 'У меня нет сайта' ) {
-					 ret = 'У меня есть сайт';
-				}else{
-					 ret = 'У меня нет сайта';
-				}
-				return ret;
-		});
 	});
 
 	// YouTube API
@@ -78,8 +65,52 @@ head.ready(function() {
 		return false;
 	});
 
+    //
+    $('a.ajax').each(function() {
+        var href = $(this).attr('href');
+        $(this).attr('href', "#"+href);
+        $(this).attr('data-href', href);
+    });
+    var fancybox_options = {
+        maxWidth	: $(window).width() > 730 ? 800 : $(window).width() - 70,
+        maxHeight	: 100000,
+        type        : 'ajax',
+        fitToView	: false,
+        autoSize	: true,
+        closeClick	: false,
+        padding		: 25,
+        openEffect	: 'fade',
+        closeEffect	: 'fade',
+        helpers:  {overlay : {locked     : false}},
+        afterClose: function() {window.location.hash = "main";}
+    }
 
-	// Navigation
+    var hash = window.location.hash
+    if (hash != "" && hash != "#") {
+        if (hash.indexOf("#block") + 1) {
+            var target = hash.substr(6);
+            console.log(target);
+            setTimeout(function() {$('html, body').stop().animate({
+                'scrollTop': $(target).offset().top - menu_offset
+            }, 500, 'swing');}, 400);
+        } else {
+            var anchor = $(document).find('a[href="'+hash+'"]').first()
+            if (anchor.size() > 0) {
+                $.fancybox( anchor.attr('data-href'), fancybox_options);
+                $('html, body').animate({ scrollTop: 0 }, 1500);
+            } else {
+                window.location.hash = "main";
+            }
+        }
+    }
+
+    $("a.ajax").on('click', function() {
+        window.location.hash = $(this).attr('data-href');
+        $.fancybox( $(this).attr('data-href'), fancybox_options);
+        return false;
+    });
+
+    // Navigation
 	$('.js-nav a').on('click',function (e) {
 		e.preventDefault();
 
@@ -87,9 +118,9 @@ head.ready(function() {
 		$target = $(target);
 
 		$('html, body').stop().animate({
-				'scrollTop': $target.offset().top - 50
+				'scrollTop': $target.offset().top - menu_offset
 		}, 500, 'swing', function () {
-				window.location.hash = target;
+				window.location.hash = "block" + target;
 		});
 	});
 	$("header .js-nav a").click(function() {
@@ -219,7 +250,7 @@ head.ready(function() {
 		unhighlight: function(element, errorClass, validClass) {
 			$(element).removeClass(errorClass);
 			$(element).parents('form').find("input[type='submit']").removeClass("disabled").removeAttr('disabled');
-			$(element).parent().find("span.error").remove();
+			$(element).parent().find("div.error").remove();
 			if (element.validity.valid) $(element).addClass(validClass);
 			$(element).attr("placeholder", $(element).attr("data-placeholder"));
 		},

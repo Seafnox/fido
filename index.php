@@ -20,7 +20,8 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="css/social-likes.css">
 	<link rel="stylesheet" href="css/jquery.reject.css">
-	<link rel="stylesheet" media="screen" href="css/screen2.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" media="screen" href="css/screen.css">
 
 	<!-- Sublime Video loader -->
 	<script type="text/javascript" src="//cdn.sublimevideo.net/js/dy1amptx.js"></script>
@@ -84,6 +85,11 @@
 			//]]>
 		</script>
 		<!-- / Oh My Stats tracking code -->
+        <img src="img/fancybox/close.png" alt="unknown" />
+        <img src="img/fancybox/fancybox_loading.gif" alt="unknown" />
+        <img src="img/fancybox/fancybox_overlay.png" alt="unknown" />
+        <img src="img/fancybox/blank.gif" alt="unknown" />
+        <img src="img/fancybox/fancybox_overlay.png" alt="unknown" />
 
 	</div>
 
@@ -371,9 +377,9 @@
 					<div class="footer__docs">
 						<h3 class="h3">Клиентам</h3>
 						<ul>
-							<li><a data-toggle="modal" href="#modalOffer">Договор оферты</a></li>
-							<li><a data-toggle="modal" href="#modalPrivacy">Политика конфиденциальности</a></li>
-							<li><a data-toggle="modal" href="#modalEssential">Реквизиты</a></li>
+							<li><a class="ajax" href="ajax/ajax_oferta.php">Договор оферты</a></li>
+							<li><a class="ajax" href="ajax/ajax_privacy.php">Политика конфиденциальности</a></li>
+							<li><a class="ajax" href="ajax/ajax_data.php">Реквизиты</a></li>
 						</ul>
 					</div>
 					<!-- /.footer__docs -->
@@ -398,54 +404,14 @@
 	</footer>
 	<!-- /.footer -->
 
-
-	<div class="modal fade" id="modalOffer" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title contenteditable" id="modalOffer_title"><? include("editable/modalOffer_title.html");?></h4>
-				</div>
-				<div class="modal-body contenteditable" id="modalOffer_body"><? include("editable/modalOffer_body.html");?></div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /#modalOffer -->
-
-	<div class="modal fade" id="modalPrivacy" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 class="modal-title contenteditable" id="modalPrivacy_title"><? include("editable/modalPrivacy_title.html");?></h2>
-				</div>
-				<div class="modal-body contenteditable" id="modalPrivacy_body"><? include("editable/modalPrivacy_body.html");?></div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /#modalPrivacy -->
-
-	<div class="modal fade" id="modalEssential" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title contenteditable" id="modalEssential_title"><? include("editable/modalEssential_title.html");?></h4>
-				</div>
-				<div class="modal-body contenteditable" id="modalEssential_body"><? include("editable/modalEssential_body.html");?>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /#modalEssential -->
-
-<script type="application/javascript" src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 <script type="application/javascript" src="ckeditor/ckeditor.js"></script>
+<script type="application/javascript" src="js/lib/jquery.js"></script>
+<script type="application/javascript" src="js/lib/jquery.fancybox.pack.js"></script>
+<script type="application/javascript" src="js/lib/jquery.reject.js"></script>
+<script type="application/javascript" src="js/lib/jquery.validate.min.js"></script>
+<script type="application/javascript" src="js/lib/jquery.activity.min.js"></script>
+<script type="application/javascript" src="js/lib/social-likes.min.js"></script>
+<script type="application/javascript" src="js/common.js"></script>
+
 </body>
 </html>

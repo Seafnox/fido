@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/social-likes.css">
     <link rel="stylesheet" href="css/jquery.reject.css">
-	<link rel="stylesheet" media="screen" href="css/screen.css">
+	<link rel="stylesheet" media="screen" href="css/screen.old.css">
 
     <!-- Sublime Video loader -->
     <script type="text/javascript" src="//cdn.sublimevideo.net/js/dy1amptx.js"></script>
